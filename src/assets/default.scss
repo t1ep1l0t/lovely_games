@@ -1,0 +1,69 @@
+@import "variable";
+
+@font-face {
+  font-family: 'Nico';
+  src: url('./fonts/NicoMoji-Regular.ttf');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  a {
+    font-family: inherit;
+    color: inherit;
+    text-decoration: none;
+    transition: all .3s ease;
+  }
+
+  ul, ol {
+    padding: 0;
+    list-style: none;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    text-align: center;
+    transition: all .3s ease;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFFFFF;
+  }
+
+  button.button, a.button {
+    background: linear-gradient(180deg, #D931FE 0%, rgba(217, 49, 254, 0.22) 100%);
+    box-shadow: 0 6px 4px 0 #A122BD;
+
+    &:hover {
+      box-shadow: 0 7px 4px 0 #A122BD;
+    }
+    &:active {
+      box-shadow: 0 2px 4px 0 #A122BD;
+    }
+  }
+
+
+
+  input, textarea, select {
+    outline: none;
+    font-family: inherit;
+  }
+}
+
+body {
+  background-color: $violet;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
