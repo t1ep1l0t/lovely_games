@@ -1,0 +1,16 @@
+{
+  "header": {
+    "login": "Sign In",
+    "register": "Sign Up",
+    "home": "Home",
+    "games": "Browse games",
+    "tournaments": "Tournaments"
+  },
+  "home": {
+    "top": {
+      "title": "Play your favourite games online!",
+      "desc": "Level up your gaming with online experiences. Dive in for thrilling challenges and epic rewards now!",
+      "button": "Play now"
+    }
+  }
+}
