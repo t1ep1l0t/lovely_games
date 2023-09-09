@@ -9,12 +9,16 @@
 <script setup lang="ts">
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
-import {onMounted} from "vue";
-import {checkAuth} from "@/hooks/Authorization";
+import { onMounted } from "vue";
+import { checkAuth } from "@/hooks/Authorization";
+import { fetchGames } from "@/api/fetchGames";
 
   onMounted(() => {
     checkAuth();
+    fetchGames('fun');
+    fetchGames('coins');
   });
+
 
 </script>
 

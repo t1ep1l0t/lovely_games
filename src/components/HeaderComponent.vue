@@ -67,14 +67,12 @@
   import {computed} from "vue";
   import {useStore} from "vuex";
   import translation from "@/plugins/translation.config";
+  import {key} from "@/store/store";
 
   const { t } = useI18n();
-  const store = useStore();
+  const store = useStore(key);
 
   const user = computed(() => store.state.user);
-
-
-
 
 </script>
 
