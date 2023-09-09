@@ -6,7 +6,7 @@ type MessageSchema = typeof en;
 
 
 // @ts-ignore
-const i18n = createI18n<[MessageSchema], 'en'>({
+const i18n = createI18n<[MessageSchema], 'en', 'ru'>({
     locale: 'en',
     fallbackLocale: 'en',
     allowComposition: true,
@@ -14,7 +14,6 @@ const i18n = createI18n<[MessageSchema], 'en'>({
     globalInjection: true,
     messages: {
         en: en,
-        // @ts-ignore
         ru: ru
     }
 });

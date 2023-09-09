@@ -10,7 +10,6 @@ const translation = {
     },
 
     get currentLocale() :string {
-
         return i18n.global.locale.value;
     },
 
@@ -19,7 +18,14 @@ const translation = {
         i18n.global.locale.value = newLocale
     },
 
-    async switchLanguage(newLocale :string) {
+    switchLanguage(newLocale :string) {
+
+        const url_locale = window.location.href.split('/');
+        url_locale[3] = newLocale;
+
+        if(newLocale !== localStorage.getItem('user-locale')) {
+            window.location.href = url_locale.join('/');
+        }
 
         translation.currentLocale = newLocale;
 
@@ -77,6 +83,7 @@ const translation = {
 
     async routeMiddleware(to, _from, next) {
         const paramLocale = to.params.locale
+        console.log(to)
 
         if(!translation.isLocaleSupported(paramLocale)) {
             return next(translation.guessDefaultLocale())

@@ -1,5 +1,6 @@
 import type {IUser} from "@/dto/UserDto";
 import {useStore} from "vuex";
+import {key} from "@/store/store";
 
 interface Error {
     error: string;
@@ -39,7 +40,7 @@ export const checkAuth = async () :Promise<void> => {
         id: 1
     }
 
-    const store = useStore();
+    const store = useStore(key);
 
     store.commit('setUser', user);
 
