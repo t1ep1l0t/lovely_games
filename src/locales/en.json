@@ -11,6 +11,19 @@
       "title": "Play your favourite games online!",
       "desc": "Level up your gaming with online experiences. Dive in for thrilling challenges and epic rewards now!",
       "button": "Play now"
+    },
+    "pay_games": {
+      "title": "Most Rated",
+      "button": "Show more"
+    },
+    "free_games": {
+      "title": "Now Competing"
+    },
+    "tournament": {
+      "title": "Participate in tournaments",
+      "desc": "Feel the competitive spirit!",
+      "button": "Participate"
     }
-  }
+  },
+  "play": "Play"
 }
