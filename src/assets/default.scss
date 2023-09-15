@@ -43,6 +43,12 @@
     &:active {
       box-shadow: 0 2px 4px 0 #A122BD;
     }
+    
+    &:disabled {
+      box-shadow: none;
+      background: #dcb2e5;
+      color: #AAAAAA;
+    }
   }
 
 

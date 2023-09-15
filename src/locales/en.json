@@ -6,6 +6,18 @@
     "games": "Browse games",
     "tournaments": "Tournaments"
   },
+  "forms": {
+    "name": "Full name",
+    "password": "Password",
+    "comment": "Comment",
+    "remember": "Remember me",
+    "not_register": "Not registered?",
+    "already_register": "Already signed up ?",
+    "forgot": "Forgot password ?",
+    "accept": "By registering you agree to our $@:terms $and $@:policy",
+    "required": "This filed is required",
+    "bad_format": "Incorrect format"
+  },
   "home": {
     "top": {
       "title": "Play your favourite games online!",
@@ -23,7 +35,13 @@
       "title": "Participate in tournaments",
       "desc": "Feel the competitive spirit!",
       "button": "Participate"
+    },
+    "contact": {
+      "title": "Contact us",
+      "subtitle": "If you have any questions, feel free to send us a message below"
     }
   },
-  "play": "Play"
+  "play": "Play",
+  "terms": "Terms of Use",
+  "policy": "Privacy Policy"
 }
