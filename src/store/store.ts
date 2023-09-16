@@ -2,6 +2,7 @@ import {createStore, Store} from "vuex";
 import type { InjectionKey } from "vue";
 import type {IUser} from "@/dto/UserDto";
 import type {IGame} from "@/dto/GameDto";
+import { fetchGames } from '@/api/fetchGames'
 
 export interface State {
     user: IUser | null;
@@ -43,6 +44,11 @@ export const store = createStore<State>({
         }
     },
     actions: {
-
+        async getGames ({commit}) {
+            const payGames = await fetchGames('coins');
+            commit('setPayGames', payGames)
+            const freeGames = await fetchGames()
+            commit('setFreeGames', freeGames)
+        }
     }
 });

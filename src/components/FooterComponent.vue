@@ -5,6 +5,17 @@
       <router-link :to="translation.i18nRoute({name: 'home'})">
         <img src="../assets/images/logotype.png" alt="" class="logotype">
       </router-link>
+      <div class='links'>
+        <router-link :to='translation.i18nRoute({name: "faq"})' class='link'>
+          FAQ
+        </router-link>
+        <router-link :to='translation.i18nRoute({name: "terms_use"})' class='link'>
+          {{ t('terms') }}
+        </router-link>
+        <router-link :to='translation.i18nRoute({name: "privacy_policy"})' class='link'>
+          {{ t('policy') }}
+        </router-link>
+      </div>
       <ul class="list">
         <li class="item"
             v-for="locale of locales"
@@ -21,8 +32,11 @@
 
 <script setup lang="ts">
 import translation from "@/plugins/translation.config";
+import { useI18n } from 'vue-i18n'
 
 const locales = translation.supportedLocales;
+
+const { t } = useI18n()
 
 </script>
 
@@ -33,7 +47,7 @@ const locales = translation.supportedLocales;
 
   & .inner {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
   }
   & .logotype {
@@ -60,6 +74,19 @@ const locales = translation.supportedLocales;
 
     &:last-child {
       border-right: none;
+    }
+  }
+  & .links {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+  & .link {
+    font-size: 20px;
+    font-weight: 600;
+    &:hover {
+      color: $rose;
     }
   }
 }

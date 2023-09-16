@@ -83,7 +83,6 @@ const translation = {
 
     async routeMiddleware(to, _from, next) {
         const paramLocale = to.params.locale
-        console.log(to)
 
         if(!translation.isLocaleSupported(paramLocale)) {
             return next(translation.guessDefaultLocale())

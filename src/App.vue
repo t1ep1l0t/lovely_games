@@ -12,8 +12,6 @@
 import HeaderComponent from "@/components/HeaderComponent.vue";
 import FooterComponent from "@/components/FooterComponent.vue";
 import {computed, onMounted} from "vue";
-import { checkAuth } from "@/hooks/Authorization";
-import { fetchGames } from "@/api/fetchGames";
 import LoginFormComponent from "@/components/LoginFormComponent.vue";
 import RegisterFormComponent from "@/components/RegisterFormComponent.vue";
 import {useStore} from "vuex";
@@ -21,8 +19,7 @@ import {key} from "@/store/store";
 
   onMounted(() => {
     //checkAuth();
-    fetchGames('fun');
-    fetchGames('coins');
+    store.dispatch('getGames')
   });
 
   const store = useStore(key);
