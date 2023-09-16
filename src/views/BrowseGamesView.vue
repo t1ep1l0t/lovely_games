@@ -15,7 +15,7 @@
           <div
             class="game"
             v-for="game of games"
-            :key="game"
+            :key="game.id"
             :style="{ backgroundImage: `url(${game.image})` }"
           >
             <span class="name">
@@ -70,17 +70,18 @@ import { useI18n } from "vue-i18n"
 import { computed, onMounted, ref } from 'vue'
 import { useStore } from "vuex"
 import { key } from "@/store/store"
-import { Store } from "vuex"
+import type { Store } from "vuex"
 import type { State } from "@/store/store"
 import { fetchGames } from '@/api/fetchGames'
 import LoaderComponent from '@/components/UI/LoaderComponent.vue'
+import type { IGame } from '@/dto/GameDto'
 
 const { t } = useI18n()
 const store: Store<State> = useStore(key)
 
 const gamesKey = ref(0)
 
-let games;
+let games :undefined | IGame[];
 onMounted(async () => {
   games = await fetchGames('coins', '100')
   setTimeout(() => {

@@ -10,12 +10,14 @@ const translation = {
     },
 
     get currentLocale() :string {
-        return i18n.global.locale.value;
+        // @ts-ignore
+        return i18n.global!.locale.value;
     },
 
     set currentLocale(newLocale :string) {
 
-        i18n.global.locale.value = newLocale
+        // @ts-ignore
+        i18n.global!.locale.value = newLocale
     },
 
     switchLanguage(newLocale :string) {
@@ -29,7 +31,7 @@ const translation = {
 
         translation.currentLocale = newLocale;
 
-        document.querySelector("html").setAttribute("lang", newLocale);
+        document.querySelector("html")!.setAttribute("lang", newLocale);
 
         localStorage.setItem("user-locale", newLocale)
     },
@@ -43,7 +45,7 @@ const translation = {
 
     getUserLocale() {
         const locale = window.navigator.language ||
-            window.navigator.userLanguage ||
+            // window.navigator.userLanguage ||
             translation.defaultLocale
 
         return {
@@ -81,7 +83,7 @@ const translation = {
         return translation.defaultLocale
     },
 
-    async routeMiddleware(to, _from, next) {
+    async routeMiddleware(to :any, _from :any, next :any) {
         const paramLocale = to.params.locale
 
         if(!translation.isLocaleSupported(paramLocale)) {
@@ -93,7 +95,7 @@ const translation = {
         return next()
     },
 
-    i18nRoute(to) {
+    i18nRoute(to :any) {
         return {
             ...to,
             params: {

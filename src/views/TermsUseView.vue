@@ -8,7 +8,7 @@
         <span class="text"
               style="margin-bottom: 60px"
         >
-          {{ t("terms_view.subtitle") }}
+          {{ t("terms_view.subtitle", {site_url: 'https://lovely-games.org'}) }}
         </span>
         <ul class='list'>
           <li class='item'
@@ -19,7 +19,7 @@
               {{ idx + 1 }}. {{ t(`terms_view.${term.name}`) }}
             </h3>
             <p class='text'>
-              {{ t(`terms_view.${term.desc}`) }}
+              {{ t(`terms_view.${term.desc}`, {mail: 'info@lovely-games.org'}) }}
             </p>
           </li>
         </ul>

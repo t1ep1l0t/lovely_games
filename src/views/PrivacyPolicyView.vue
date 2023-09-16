@@ -14,7 +14,7 @@
               {{ idx + 1 }}. {{ t(`policy_view.${term.name}`) }}
             </h3>
             <p class='text'>
-              {{ t(`policy_view.${term.desc}`) }}
+              {{ t(`policy_view.${term.desc}`, {mail: 'info@lovely-games.org'}) }}
             </p>
             <ul class='subs' v-if='term.sub'>
               <p class='text'

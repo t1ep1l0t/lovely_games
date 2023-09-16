@@ -149,8 +149,8 @@ const setPasswordType = () => {
   }
 }
 
-const required = (v) => !!v || t("forms.required")
-const isEmail = (v) => {
+const required = (v :any) => !!v || t("forms.required")
+const isEmail = (v :any) => {
   if (/.+@.+\..+/.test(v)) return true
 
   return t("forms.bad_format")
