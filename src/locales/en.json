@@ -114,7 +114,14 @@
     "name8": "Cookies",
     "desc8": "Cookies are little files which are stored on your device onсe you visit a website, which has data linked to a web browser and the particular website. They are placed in a specific folder on your hard disk. If you return to a given website, the page might identify you and add to the history due to cookies. Cookies cannot carry viruses or run programs on your device and do not put at risk other devices. You have the option of accepting or rejecting cookies. Most browsers allow cookies by default. However, you can change your browser settings to deny cookies. If you choose \"Allow cookies\", you will have the option to deny them later."
   },
+  "tournaments": {
+    "start": "Beginning: ",
+    "end": "Ending: ",
+    "players": "Players Connected: "
+  },
   "play": "Play",
+  "start": "Start now",
   "terms": "Terms of Use",
-  "policy": "Privacy Policy"
+  "policy": "Privacy Policy",
+  "loading": "Loading"
 }

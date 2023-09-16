@@ -20,6 +20,7 @@ import {key} from "@/store/store";
   onMounted(() => {
     //checkAuth();
     store.dispatch('getGames')
+    store.dispatch('getTournaments')
   });
 
   const store = useStore(key);

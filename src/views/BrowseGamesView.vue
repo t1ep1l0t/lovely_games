@@ -9,6 +9,7 @@
           </span>
         </h1>
         <div class="games"
+             v-if='gamesKey !== 0'
              :key='gamesKey'
         >
           <div
@@ -58,6 +59,7 @@
             </div>
           </div>
         </div>
+        <LoaderComponent v-else/>
       </div>
     </div>
   </section>
@@ -71,6 +73,7 @@ import { key } from "@/store/store"
 import { Store } from "vuex"
 import type { State } from "@/store/store"
 import { fetchGames } from '@/api/fetchGames'
+import LoaderComponent from '@/components/UI/LoaderComponent.vue'
 
 const { t } = useI18n()
 const store: Store<State> = useStore(key)
@@ -80,7 +83,9 @@ const gamesKey = ref(0)
 let games;
 onMounted(async () => {
   games = await fetchGames('coins', '100')
-  gamesKey.value++
+  setTimeout(() => {
+    gamesKey.value++
+  }, 500)
 })
 
 const user = computed(() => store.state.user);
@@ -114,11 +119,10 @@ const playGame = async () => {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
     gap: 60px;
   }
   & .title {
-    align-self: center;
     text-align: center;
     font-size: 96px;
     font-weight: 600;

@@ -16,7 +16,9 @@
             {{ game.name }}
           </span>
           <div class="info">
-            <button class="info__button">
+            <button class="info__button"
+                    @click='playGame'
+            >
               {{ t('play') }}
             </button>
             <div class="price" v-if="type === 'pay'">
@@ -64,9 +66,12 @@
 import type {IGame} from "@/dto/GameDto";
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from "vue3-carousel";
-import {onMounted, ref} from "vue";
+import { computed, onMounted, ref } from 'vue'
 import {useI18n} from "vue-i18n";
+import { useStore } from 'vuex'
+import { key } from '@/store/store'
 
+const store = useStore(key)
 interface IProps {
   games: IGame[],
   type: string
@@ -88,6 +93,23 @@ const settings = {
 };
 
 const carousel = ref<HTMLInputElement | null>(null);
+
+const user = computed(() => store.state.user);
+
+const playGame = async () => {
+  if (!user.value) {
+    store.commit('setLoginModal')
+  }
+  else {
+    const response = await fetch('https://play.forestrygames.com/lets-inspect/', {
+      method: 'GET',
+      headers: {
+        'Accept': '*/*',
+        'Accept-Encoding': 'gzip, deflate, br',
+      }
+    })
+  }
+}
 
 const prevSlide = () => {
   carousel?.value?.prev()
